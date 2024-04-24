@@ -55,7 +55,7 @@ class WifiManager:
 
     def _ap_added(self, nm, interface, signal, access_point):
         with suppress(NetworkManager.ObjectVanished):
-            #access_point.OnPropertiesChanged(self._ap_prop_changed)
+            access_point.OnPropertiesChanged(self._ap_prop_changed)
             ssid = self._add_ap(access_point)
             for cb in self._callbacks['scan_results']:
                 args = (cb, [ssid], [])
@@ -221,22 +221,23 @@ class WifiManager:
                         "ssid": settings['802-11-wireless']['ssid'],
                         "connected": self.get_connected_ssid() == ssid
                     })
-        path = self.path_by_ssid[ssid]
-        aps = self.visible_networks
-        if path in aps:
-            ap = aps[path]
-            with suppress(NetworkManager.ObjectVanished):
-                netinfo.update({
-                    "mac": ap.HwAddress,
-                    "channel": WifiChannels.lookup(ap.Frequency)[1],
-                    "configured": ssid in self.known_networks,
-                    "frequency": str(ap.Frequency),
-                    "flags": ap.Flags,
-                    "ssid": ssid,
-                    "connected": self._get_connected_ap() == ap,
-                    "encryption": self._get_encryption(ap.RsnFlags),
-                    "signal_level_dBm": str(ap.Strength)
-                })
+        if ssid in self.path_by_ssid:
+            path = self.path_by_ssid[ssid]
+            aps = self.visible_networks
+            if path in aps:
+                ap = aps[path]
+                with suppress(NetworkManager.ObjectVanished):
+                    netinfo.update({
+                        "mac": ap.HwAddress,
+                        "channel": WifiChannels.lookup(ap.Frequency)[1],
+                        "configured": ssid in self.known_networks,
+                        "frequency": str(ap.Frequency),
+                        "flags": ap.Flags,
+                        "ssid": ssid,
+                        "connected": self._get_connected_ap() == ap,
+                        "encryption": self._get_encryption(ap.RsnFlags),
+                        "signal_level_dBm": str(ap.Strength)
+                    })
         return netinfo
 
     @staticmethod
