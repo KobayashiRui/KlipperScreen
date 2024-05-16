@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-02 17:39-0300\n"
-"PO-Revision-Date: 2024-03-18 16:11+0000\n"
+"POT-Creation-Date: 2024-04-26 23:35-0300\n"
+"PO-Revision-Date: 2024-04-13 16:48+0000\n"
 "Last-Translator: Dominik <dominik.sostar@gmail.com>\n"
 "Language-Team: Slovenian <https://hosted.weblate.org/projects/klipperscreen/"
 "klipperscreen/sl/>\n"
@@ -71,6 +71,9 @@ msgstr "Ali ste prepričani da želite izključiti predmet?"
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Ali ste prepričani, da želite zagnati zaustavitev v sili?"
 
+msgid "Are you sure you want to stop the calibration?"
+msgstr ""
+
 msgid "Are you sure you wish to cancel this print?"
 msgstr "Ali ste prepričani da želite preklicati to tiskanje?"
 
@@ -82,6 +85,9 @@ msgstr "Ali ste prepričani da želite znova zagnati sistem?"
 
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Ali ste prepričani da želite zaustaviti sistem?"
+
+msgid "Asks for confirmation before stopping"
+msgstr ""
 
 msgid "Auto"
 msgstr "Samodejno"
@@ -104,8 +110,8 @@ msgstr "Umerjanje plošče"
 msgid "Bed Mesh"
 msgstr "Umerjanje mreže"
 
-msgid "Bed screw configuration:"
-msgstr "Umerjanje vijakov plošče:"
+msgid "Both"
+msgstr ""
 
 msgid "Calibrate"
 msgstr "Umerite"
@@ -137,6 +143,12 @@ msgstr "Preklicujem"
 msgid "Cannot connect to Moonraker"
 msgstr "Ne morem se povezati z Moonrakerjem"
 
+msgid "Changes how the interface looks"
+msgstr ""
+
+msgid "Changes how the time remaining is calculated"
+msgstr ""
+
 msgid "Channel"
 msgstr "Kanal"
 
@@ -151,6 +163,9 @@ msgstr "Počisti"
 
 msgid "Close"
 msgstr "Zapri"
+
+msgid "Close messages after a timeout"
+msgstr ""
 
 msgid "Complete"
 msgstr "Končano"
@@ -171,6 +186,9 @@ msgstr "Konzola"
 msgid "Cooldown"
 msgstr "Ohlajanje"
 
+msgid "Current percentage and graph line"
+msgstr ""
+
 msgid "DPMS has failed to load and has been disabled"
 msgstr "DPMS se ni uspel naložiti in je onemogočen"
 
@@ -189,6 +207,9 @@ msgstr "Prekliči izbiro"
 msgid "Disable Motors"
 msgstr "Onemogoči motorje"
 
+msgid "Disable for 12hs with am / pm"
+msgstr ""
+
 msgid "Distance (mm)"
 msgstr "Razdalja (mm)"
 
@@ -198,6 +219,12 @@ msgstr "Ali želite obnoviti %s?"
 
 msgid "Elapsed:"
 msgstr "Preteklo:"
+
+msgid "Emergency Stop"
+msgstr ""
+
+msgid "Enable screen power management"
+msgstr ""
 
 msgid "Ended official support in June 2023"
 msgstr "Konec uradne podpore junija 2023"
@@ -215,6 +242,9 @@ msgid "Error setting active spool"
 msgstr ""
 
 msgid "Error trying to fetch spools"
+msgstr ""
+
+msgid "Error: Couldn't get a position to probe"
 msgstr ""
 
 msgid "Estimated Time Method"
@@ -355,6 +385,9 @@ msgstr "Napačno"
 msgid "Invalid password"
 msgstr "Napačno geslo"
 
+msgid "Inversely affects the icon size"
+msgstr ""
+
 msgid "Invert X"
 msgstr "Zrcali X"
 
@@ -366,6 +399,9 @@ msgstr "Zrcali Z"
 
 msgid "It may take more than 5 minutes depending on the heater power."
 msgstr "Lahko traja več kot 5 minut, odvisno od moči grelnika."
+
+msgid "It's possible that the configuration is not correct"
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Ponovni zagon Klipperja"
@@ -445,9 +481,6 @@ msgstr "Maks"
 msgid "Max Acceleration"
 msgstr "Največji pospešek"
 
-msgid "Max Acceleration to Deceleration"
-msgstr "Največji pospešek do pojemka"
-
 msgid "Max Velocity"
 msgstr "Največja hitrost"
 
@@ -471,6 +504,9 @@ msgstr "Meni"
 
 msgid "Mesh calibrate"
 msgstr "Umeritev mreže"
+
+msgid "Minimum Cruise Ratio"
+msgstr ""
 
 msgid "Modified"
 msgstr "Spremenjeno"
@@ -508,12 +544,8 @@ msgstr "Mreža ni naložena"
 msgid "No wireless interface has been found"
 msgstr "Brezžičnega vmesnika ni bilo mogoče najti"
 
-msgid ""
-"Not supported for auto-detection, it needs to be configured in klipperscreen."
-"conf"
+msgid "Not all screens support this"
 msgstr ""
-"Ni podprto za samodejno zaznavanje, treba ga je konfigurirati v klipperscreen"
-".conf"
 
 msgid "Not working or not configured"
 msgstr "Ne deluje ali ni konfigurirano"
@@ -601,9 +633,8 @@ msgstr "Ime profila:"
 msgid "Provide KlipperScreen.log when asking for help.\n"
 msgstr "Ko prosite za pomoč, navedite KlipperScreen.log.\n"
 
-#, fuzzy
 msgid "Quad Gantry Level"
-msgstr "Quad Gantry Level"
+msgstr ""
 
 msgid "Raise Nozzle"
 msgstr "Dvigni šobo"
@@ -650,6 +681,9 @@ msgstr "Poskusi znova"
 msgid "Retrying"
 msgstr "Poskušam znova"
 
+msgid "Rotation invalid"
+msgstr ""
+
 msgid "Save"
 msgstr "Shrani"
 
@@ -678,6 +712,9 @@ msgstr "Čas izklopa zaslona"
 msgid "Screws Adjust"
 msgstr "Nastavitev vijakov"
 
+msgid "Screws not used:"
+msgstr ""
+
 msgid "Select"
 msgstr "Izberi"
 
@@ -698,6 +735,9 @@ msgstr "Pokaži moč grelnika"
 
 msgid "Show Scrollbars Buttons"
 msgstr "Pokaži gumbe drsnih trakov"
+
+msgid "Show only devices that are able to be set"
+msgstr ""
 
 msgid "Shutdown"
 msgstr "Zaustavitev"
@@ -759,14 +799,17 @@ msgstr "Temperatura (°C)"
 msgid "Temperature"
 msgstr "Temperatura"
 
+msgid "This panel supports up-to 9 screws in a 3x3 Grid"
+msgstr ""
+
+msgid "Timeout for screen black-out or power-off"
+msgstr ""
+
 msgid "Total:"
 msgstr "Skupno:"
 
 msgid "Unknown Heater"
 msgstr "Neznan grelec"
-
-msgid "Unknown screw position"
-msgstr "Neznan položaj vijaka"
 
 msgid "Unload"
 msgstr ""
@@ -788,6 +831,9 @@ msgstr "Posodabljam"
 
 msgid "Uploaded"
 msgstr "Naloženo"
+
+msgid "Useful for un-responsive touchscreens"
+msgstr ""
 
 msgid "Warning"
 msgstr "Opozorilo"
@@ -820,6 +866,8 @@ msgid "commit"
 msgid_plural "commits"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 msgid "dBm"
 msgstr "dBm"
@@ -855,3 +903,19 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Bed screw configuration:"
+#~ msgstr "Umerjanje vijakov plošče:"
+
+#~ msgid ""
+#~ "Not supported for auto-detection, it needs to be configured in "
+#~ "klipperscreen.conf"
+#~ msgstr ""
+#~ "Ni podprto za samodejno zaznavanje, treba ga je konfigurirati v "
+#~ "klipperscreen.conf"
+
+#~ msgid "Unknown screw position"
+#~ msgstr "Neznan položaj vijaka"
+
+#~ msgid "Max Acceleration to Deceleration"
+#~ msgstr "Največji pospešek do pojemka"

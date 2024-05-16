@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-02 17:39-0300\n"
-"PO-Revision-Date: 2024-03-20 11:25+0000\n"
-"Last-Translator: srbjessen <srbjessen@gmail.com>\n"
+"POT-Creation-Date: 2024-04-26 23:35-0300\n"
+"PO-Revision-Date: 2024-04-13 16:48+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/klipperscreen/"
 "klipperscreen/da/>\n"
 "Language: da\n"
@@ -65,6 +65,9 @@ msgstr "Er du sikker på, at du ønsker at ekskludere dette objekt?"
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "Er du sikker på, at du vil aktivere nødstop?"
 
+msgid "Are you sure you want to stop the calibration?"
+msgstr ""
+
 msgid "Are you sure you wish to cancel this print?"
 msgstr "Er du sikker på, at du vil annullere det igangværende print?"
 
@@ -76,6 +79,9 @@ msgstr "Er du sikker på, at du vil genstarte systemet?"
 
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "Er du sikker på, at du vil lukke systemet?"
+
+msgid "Asks for confirmation before stopping"
+msgstr ""
 
 msgid "Auto"
 msgstr "Automatisk"
@@ -98,8 +104,8 @@ msgstr "Bed-Level"
 msgid "Bed Mesh"
 msgstr "Bed-mesh"
 
-msgid "Bed screw configuration:"
-msgstr "Bed-skrue konfiguration:"
+msgid "Both"
+msgstr ""
 
 msgid "Calibrate"
 msgstr "Kalibrér"
@@ -131,6 +137,12 @@ msgstr "Annullerer"
 msgid "Cannot connect to Moonraker"
 msgstr "Kan ikke oprette forbindelse til Moonraker"
 
+msgid "Changes how the interface looks"
+msgstr ""
+
+msgid "Changes how the time remaining is calculated"
+msgstr ""
+
 msgid "Channel"
 msgstr "Kanal"
 
@@ -145,6 +157,9 @@ msgstr "Ryd"
 
 msgid "Close"
 msgstr "Luk"
+
+msgid "Close messages after a timeout"
+msgstr ""
 
 msgid "Complete"
 msgstr "Færdig"
@@ -165,6 +180,9 @@ msgstr "Terminal"
 msgid "Cooldown"
 msgstr "Afkøling"
 
+msgid "Current percentage and graph line"
+msgstr ""
+
 msgid "DPMS has failed to load and has been disabled"
 msgstr "DPMS kunne ikke indlæses og er blevet deaktiveret"
 
@@ -183,6 +201,9 @@ msgstr "Fravælg"
 msgid "Disable Motors"
 msgstr "Deaktivér motorer"
 
+msgid "Disable for 12hs with am / pm"
+msgstr ""
+
 msgid "Distance (mm)"
 msgstr "Længde (mm)"
 
@@ -192,6 +213,12 @@ msgstr "Vil du gendanne %s?"
 
 msgid "Elapsed:"
 msgstr "Tid:"
+
+msgid "Emergency Stop"
+msgstr ""
+
+msgid "Enable screen power management"
+msgstr ""
 
 msgid "Ended official support in June 2023"
 msgstr "Officiel support udløb i Juni 2023"
@@ -210,6 +237,9 @@ msgstr "Fejl ved indstilling af aktiv spole"
 
 msgid "Error trying to fetch spools"
 msgstr "Fejl ved hentning af spoler"
+
+msgid "Error: Couldn't get a position to probe"
+msgstr ""
 
 msgid "Estimated Time Method"
 msgstr "Metode til beregning af tid"
@@ -349,6 +379,9 @@ msgstr "Ugyldig"
 msgid "Invalid password"
 msgstr "Ugyldigt kodeord"
 
+msgid "Inversely affects the icon size"
+msgstr ""
+
 msgid "Invert X"
 msgstr "Invertér X"
 
@@ -360,6 +393,9 @@ msgstr "Invertér Z"
 
 msgid "It may take more than 5 minutes depending on the heater power."
 msgstr "Det kan tage mere end 5 minutter, afhængigt af opvarmerens styrke."
+
+msgid "It's possible that the configuration is not correct"
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "Klipper Genstart"
@@ -439,9 +475,6 @@ msgstr "Maks"
 msgid "Max Acceleration"
 msgstr "Maks. Acceleration"
 
-msgid "Max Acceleration to Deceleration"
-msgstr "Maks. acceleration til decceleration"
-
 msgid "Max Velocity"
 msgstr "Maks. hastighed"
 
@@ -465,6 +498,9 @@ msgstr "Menu"
 
 msgid "Mesh calibrate"
 msgstr "Mesh-kalibrering"
+
+msgid "Minimum Cruise Ratio"
+msgstr ""
 
 msgid "Modified"
 msgstr "Ændret"
@@ -502,11 +538,8 @@ msgstr "Intet mesh er indlæst"
 msgid "No wireless interface has been found"
 msgstr "Intet trådløst interface blev fundet"
 
-msgid ""
-"Not supported for auto-detection, it needs to be configured in klipperscreen."
-"conf"
+msgid "Not all screens support this"
 msgstr ""
-"Understøttes ikke til auto-find, dette skal konfigureres i klipperscreen.conf"
 
 msgid "Not working or not configured"
 msgstr "Fungerer ikke, eller ikke konfigureret"
@@ -640,6 +673,9 @@ msgstr "Forsøg igen"
 msgid "Retrying"
 msgstr "Forsøger igen..."
 
+msgid "Rotation invalid"
+msgstr ""
+
 msgid "Save"
 msgstr "Gem"
 
@@ -668,6 +704,9 @@ msgstr "Skærm timeout"
 msgid "Screws Adjust"
 msgstr "Skruejustering"
 
+msgid "Screws not used:"
+msgstr ""
+
 msgid "Select"
 msgstr "Vælg"
 
@@ -688,6 +727,9 @@ msgstr "Vis opvarmerens styrke"
 
 msgid "Show Scrollbars Buttons"
 msgstr "Vis knapper på rullelinjen"
+
+msgid "Show only devices that are able to be set"
+msgstr ""
 
 msgid "Shutdown"
 msgstr "Luk ned"
@@ -749,14 +791,17 @@ msgstr "Temp (°C)"
 msgid "Temperature"
 msgstr "Temperatur"
 
+msgid "This panel supports up-to 9 screws in a 3x3 Grid"
+msgstr ""
+
+msgid "Timeout for screen black-out or power-off"
+msgstr ""
+
 msgid "Total:"
 msgstr "Total:"
 
 msgid "Unknown Heater"
 msgstr "Ukendt varmelegeme"
-
-msgid "Unknown screw position"
-msgstr "Ukendt skrue-position"
 
 msgid "Unload"
 msgstr "Tilbagetræk"
@@ -778,6 +823,9 @@ msgstr "Opdatering"
 
 msgid "Uploaded"
 msgstr "Uploadet"
+
+msgid "Useful for un-responsive touchscreens"
+msgstr ""
 
 msgid "Warning"
 msgstr "Advarsel"
@@ -841,6 +889,22 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Bed screw configuration:"
+#~ msgstr "Bed-skrue konfiguration:"
+
+#~ msgid ""
+#~ "Not supported for auto-detection, it needs to be configured in "
+#~ "klipperscreen.conf"
+#~ msgstr ""
+#~ "Understøttes ikke til auto-find, dette skal konfigureres i klipperscreen."
+#~ "conf"
+
+#~ msgid "Unknown screw position"
+#~ msgstr "Ukendt skrue-position"
+
+#~ msgid "Max Acceleration to Deceleration"
+#~ msgstr "Maks. acceleration til decceleration"
 
 #~ msgid "Continue"
 #~ msgstr "Fortsæt"

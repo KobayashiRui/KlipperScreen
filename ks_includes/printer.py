@@ -12,7 +12,6 @@ class Printer:
         self.state = "disconnected"
         self.state_cb = state_cb
         self.state_callbacks = state_callbacks
-        self.devices = {}
         self.power_devices = {}
         self.tools = []
         self.extrudercount = 0
@@ -27,11 +26,11 @@ class Printer:
         self.available_commands = {}
         self.spoolman = False
         self.temp_devices = self.sensors = None
+        self.system_info = {}
 
     def reinit(self, printer_info, data):
         self.config = data['configfile']['config']
         self.data = data
-        self.devices.clear()
         self.tools.clear()
         self.extrudercount = 0
         self.tempdevcount = 0
@@ -43,25 +42,17 @@ class Printer:
         self.available_commands.clear()
         self.temp_devices = self.sensors = None
         self.stop_tempstore_updates()
+        self.system_info.clear()
 
         for x in self.config.keys():
             if x[:8] == "extruder":
                 self.tools.append(x)
                 self.tools = sorted(self.tools)
                 self.extrudercount += 1
-                if x.startswith('extruder_stepper'):
-                    continue
-                self.devices[x] = {
-                    "temperature": 0,
-                    "target": 0
-                }
             if x == 'heater_bed' \
                     or x.startswith('heater_generic ') \
                     or x.startswith('temperature_sensor ') \
                     or x.startswith('temperature_fan '):
-                self.devices[x] = {"temperature": 0}
-                if not x.startswith('temperature_sensor '):
-                    self.devices[x]["target"] = 0
                 # Support for hiding devices by name
                 name = x.split()[1] if len(x.split()) > 1 else x
                 if not name.startswith("_"):
@@ -114,14 +105,10 @@ class Printer:
     def process_update(self, data):
         if self.data is None:
             return
-        for x in (self.get_temp_devices() + self.get_filament_sensors()):
-            if x in data:
-                for i in data[x]:
-                    self.set_dev_stat(x, i, data[x][i])
 
         for x in data:
-            if x == "configfile":
-                continue
+            if x == "configfile" and 'config' in data[x]:
+                self.config.update(data[x]['config'])
             if x not in self.data:
                 self.data[x] = {}
             self.data[x].update(data[x])
@@ -159,7 +146,7 @@ class Printer:
             self.state = state
         if self.state_callbacks[state] is not None:
             logging.debug(f"Adding callback for state: {state}")
-            GLib.idle_add(self.state_cb, self.state_callbacks[state])
+            GLib.idle_add(self.state_cb, state, self.state_callbacks[state])
 
     def configure_power_devices(self, data):
         self.power_devices = {}
@@ -217,7 +204,7 @@ class Printer:
 
     def get_heaters(self):
         heaters = self.get_config_section_list("heater_generic ")
-        if "heater_bed" in self.devices:
+        if "heater_bed" in self.config:
             heaters.insert(0, "heater_bed")
         return heaters
 
@@ -242,32 +229,23 @@ class Printer:
         return None
 
     def get_printer_status_data(self):
-        data = {
+        return {
+            "moonraker": {
+                "power_devices": {"count": len(self.get_power_devices())},
+                "cameras": {"count": len(self.cameras)},
+                "spoolman": self.spoolman,
+            },
             "printer": {
+                "pause_resume": {"is_paused": self.state == "paused"},
                 "extruders": {"count": self.extrudercount},
                 "temperature_devices": {"count": self.tempdevcount},
                 "fans": {"count": self.fancount},
                 "output_pins": {"count": self.output_pin_count},
                 "gcode_macros": {"count": len(self.get_gcode_macros()), "list": self.get_gcode_macros()},
-                "idle_timeout": self.get_stat("idle_timeout").copy(),
-                "pause_resume": {"is_paused": self.state == "paused"},
-                "power_devices": {"count": len(self.get_power_devices())},
-                "cameras": {"count": len(self.cameras)},
-                "spoolman": self.spoolman,
                 "leds": {"count": self.ledcount},
+                "config_sections": [section for section in self.config.keys()],
             }
         }
-
-        sections = ["bed_mesh", "bltouch", "probe", "quad_gantry_level", "z_tilt"]
-        for section in sections:
-            if self.config_section_exists(section):
-                data["printer"][section] = self.get_config_section(section).copy()
-
-        sections = ["firmware_retraction", "input_shaper", "bed_screws", "screws_tilt_adjust"]
-        for section in sections:
-            data["printer"][section] = self.config_section_exists(section)
-
-        return data
 
     def get_leds(self):
         return [
@@ -308,13 +286,9 @@ class Printer:
         if self.data is None or stat not in self.data:
             return {}
         if substat is not None:
-            return self.data[stat][substat] if substat in self.data[stat] else {}
-        return self.data[stat]
-
-    def get_dev_stat(self, dev, stat):
-        if dev in self.devices and stat in self.devices[dev]:
-            return self.devices[dev][stat]
-        return None
+            return self.data.get(stat, {}).get(substat, {})
+        else:
+            return self.data.get(stat, {})
 
     def get_fan_speed(self, fan="fan"):
         speed = 0
@@ -344,10 +318,10 @@ class Printer:
         return list(self.tempstore)
 
     def device_has_target(self, device):
-        return "target" in self.devices[device]
+        return "target" in self.data[device]
 
     def device_has_power(self, device):
-        return "power" in self.devices[device]
+        return "power" in self.data[device]
 
     def get_temp_store(self, device, section=False, results=0):
         if device not in self.tempstore:
@@ -406,20 +380,15 @@ class Printer:
     def config_section_exists(self, section):
         return section in self.get_config_section_list()
 
-    def set_dev_stat(self, dev, stat, value):
-        if dev not in self.devices:
-            return
-
-        self.devices[dev][stat] = value
-
     def _update_temp_store(self):
         if self.tempstore is None:
             return False
         for device in self.tempstore:
             for x in self.tempstore[device]:
                 self.tempstore[device][x].pop(0)
-                temp = self.get_dev_stat(device, x[:-1])
-                if temp is None:
+                temp = self.get_stat(device, x[:-1])
+                if not temp:
+                    # If the temperature is not available, set it to 0.
                     temp = 0
                 self.tempstore[device][x].append(temp)
         return True

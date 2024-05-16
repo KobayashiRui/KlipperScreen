@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KlipperScreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-02 17:39-0300\n"
-"PO-Revision-Date: 2024-02-27 18:50+0000\n"
-"Last-Translator: Will Zhai <willzhai55@gmail.com>\n"
+"POT-Creation-Date: 2024-04-26 23:35-0300\n"
+"PO-Revision-Date: 2024-04-13 16:48+0000\n"
+"Last-Translator: Samuel Wang <imhsaw@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "klipperscreen/klipperscreen/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -70,6 +70,9 @@ msgstr "你确定要排除该对象吗？"
 msgid "Are you sure you want to run Emergency Stop?"
 msgstr "您确定要紧急停止吗？"
 
+msgid "Are you sure you want to stop the calibration?"
+msgstr ""
+
 msgid "Are you sure you wish to cancel this print?"
 msgstr "您确定要取消打印吗？"
 
@@ -81,6 +84,9 @@ msgstr "您确定要重启系统吗？"
 
 msgid "Are you sure you wish to shutdown the system?"
 msgstr "您确定要关闭系统吗？"
+
+msgid "Asks for confirmation before stopping"
+msgstr ""
 
 msgid "Auto"
 msgstr "自动"
@@ -103,8 +109,8 @@ msgstr "热床调平"
 msgid "Bed Mesh"
 msgstr "床网"
 
-msgid "Bed screw configuration:"
-msgstr "热床螺丝配置："
+msgid "Both"
+msgstr ""
 
 msgid "Calibrate"
 msgstr "校准"
@@ -136,6 +142,12 @@ msgstr "正在取消"
 msgid "Cannot connect to Moonraker"
 msgstr "无法连接到Moonraker"
 
+msgid "Changes how the interface looks"
+msgstr ""
+
+msgid "Changes how the time remaining is calculated"
+msgstr ""
+
 msgid "Channel"
 msgstr "群组"
 
@@ -150,6 +162,9 @@ msgstr "清除"
 
 msgid "Close"
 msgstr "关闭"
+
+msgid "Close messages after a timeout"
+msgstr ""
 
 msgid "Complete"
 msgstr "完成"
@@ -170,6 +185,9 @@ msgstr "控制台"
 msgid "Cooldown"
 msgstr "冷却"
 
+msgid "Current percentage and graph line"
+msgstr ""
+
 msgid "DPMS has failed to load and has been disabled"
 msgstr "屏幕省电管理系统无法加载并已禁用"
 
@@ -188,6 +206,9 @@ msgstr "取消选择"
 msgid "Disable Motors"
 msgstr "关闭电机"
 
+msgid "Disable for 12hs with am / pm"
+msgstr ""
+
 msgid "Distance (mm)"
 msgstr "挤出长度（mm）"
 
@@ -198,6 +219,12 @@ msgstr "你想恢复 %s 吗？"
 msgid "Elapsed:"
 msgstr "已用时间："
 
+msgid "Emergency Stop"
+msgstr ""
+
+msgid "Enable screen power management"
+msgstr ""
+
 msgid "Ended official support in June 2023"
 msgstr "2023年6月结束官方支持"
 
@@ -205,15 +232,18 @@ msgid "Error"
 msgstr "错误"
 
 msgid "Error clearing active spool"
-msgstr ""
+msgstr "退出当前耗材时出错"
 
 msgid "Error getting active spool"
-msgstr ""
+msgstr "获取当前耗材时出错"
 
 msgid "Error setting active spool"
-msgstr ""
+msgstr "设置当前耗材时出错"
 
 msgid "Error trying to fetch spools"
+msgstr "尝试获取耗材时出错"
+
+msgid "Error: Couldn't get a position to probe"
 msgstr ""
 
 msgid "Estimated Time Method"
@@ -229,7 +259,7 @@ msgid "Extrude"
 msgstr "挤出"
 
 msgid "Extruders"
-msgstr ""
+msgstr "挤出机"
 
 msgid "Extrusion +"
 msgstr "挤出量 +"
@@ -354,6 +384,9 @@ msgstr "无效"
 msgid "Invalid password"
 msgstr "密码无效"
 
+msgid "Inversely affects the icon size"
+msgstr ""
+
 msgid "Invert X"
 msgstr "反转X轴"
 
@@ -365,6 +398,9 @@ msgstr "反转Z轴"
 
 msgid "It may take more than 5 minutes depending on the heater power."
 msgstr "这可能需要5分钟以上的时间，这取决于加热器的功率。"
+
+msgid "It's possible that the configuration is not correct"
+msgstr ""
 
 msgid "Klipper Restart"
 msgstr "重启Klipper"
@@ -419,7 +455,7 @@ msgid "Loading..."
 msgstr "加载中..."
 
 msgid "Lost Connection to Moonraker"
-msgstr ""
+msgstr "与 Moonraker 失去连接"
 
 msgid "Lower Nozzle"
 msgstr "降低喷嘴"
@@ -441,9 +477,6 @@ msgstr "最大"
 
 msgid "Max Acceleration"
 msgstr "最大加速度"
-
-msgid "Max Acceleration to Deceleration"
-msgstr "最大加速至减速"
 
 msgid "Max Velocity"
 msgstr "最大速度"
@@ -468,6 +501,9 @@ msgstr "菜单"
 
 msgid "Mesh calibrate"
 msgstr "床网校准"
+
+msgid "Minimum Cruise Ratio"
+msgstr ""
 
 msgid "Modified"
 msgstr "已修改"
@@ -505,10 +541,8 @@ msgstr "未加载网床"
 msgid "No wireless interface has been found"
 msgstr "未找到无线接口"
 
-msgid ""
-"Not supported for auto-detection, it needs to be configured in klipperscreen."
-"conf"
-msgstr "不支持自动检测，需要在klpperscreen.conf中进行配置"
+msgid "Not all screens support this"
+msgstr ""
 
 msgid "Not working or not configured"
 msgstr "不工作或未配置"
@@ -641,6 +675,9 @@ msgstr "重试"
 msgid "Retrying"
 msgstr "正在重试"
 
+msgid "Rotation invalid"
+msgstr ""
+
 msgid "Save"
 msgstr "保存"
 
@@ -669,6 +706,9 @@ msgstr "自动息屏"
 msgid "Screws Adjust"
 msgstr "螺丝调整"
 
+msgid "Screws not used:"
+msgstr ""
+
 msgid "Select"
 msgstr "选择"
 
@@ -689,6 +729,9 @@ msgstr "显示加热器功率（%）"
 
 msgid "Show Scrollbars Buttons"
 msgstr "显示滚动条按钮"
+
+msgid "Show only devices that are able to be set"
+msgstr ""
 
 msgid "Shutdown"
 msgstr "关闭"
@@ -750,14 +793,17 @@ msgstr "温度 （°C）"
 msgid "Temperature"
 msgstr "温度"
 
+msgid "This panel supports up-to 9 screws in a 3x3 Grid"
+msgstr ""
+
+msgid "Timeout for screen black-out or power-off"
+msgstr ""
+
 msgid "Total:"
 msgstr "合计："
 
 msgid "Unknown Heater"
 msgstr "未知加热器"
-
-msgid "Unknown screw position"
-msgstr "未知螺丝位置"
 
 msgid "Unload"
 msgstr "卸载耗材"
@@ -779,6 +825,9 @@ msgstr "正在更新"
 
 msgid "Uploaded"
 msgstr "上传于"
+
+msgid "Useful for un-responsive touchscreens"
+msgstr ""
 
 msgid "Warning"
 msgstr "警告"
@@ -839,6 +888,20 @@ msgstr "mm/s²"
 
 msgid "mm³/s"
 msgstr "mm³/s"
+
+#~ msgid "Bed screw configuration:"
+#~ msgstr "热床螺丝配置："
+
+#~ msgid ""
+#~ "Not supported for auto-detection, it needs to be configured in "
+#~ "klipperscreen.conf"
+#~ msgstr "不支持自动检测，需要在klpperscreen.conf中进行配置"
+
+#~ msgid "Unknown screw position"
+#~ msgstr "未知螺丝位置"
+
+#~ msgid "Max Acceleration to Deceleration"
+#~ msgstr "最大加速至减速"
 
 #~ msgid "Continue"
 #~ msgstr "继续"
