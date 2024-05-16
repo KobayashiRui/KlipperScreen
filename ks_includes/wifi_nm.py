@@ -172,7 +172,7 @@ class WifiManager:
         try:
             NetworkManager.Settings.AddConnection(new_connection)
         except dbus.exceptions.DBusException as e:
-            msg = _("Invalid password") if "802-11-wireless-security.psk" in e else f"{e}"
+            msg = "Invalid password" if "802-11-wireless-security.psk" in e else f"{e}"
             self.callback("popup", msg)
             logging.info(f"Error adding network {e}")
         self._update_known_connections()

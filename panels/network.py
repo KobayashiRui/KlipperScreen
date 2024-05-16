@@ -122,7 +122,7 @@ class Panel(ScreenPanel):
         display_name = _("Hidden") if ssid.startswith("\x00") else f"{ssid}"
         netinfo = self.wifi.get_network_info(ssid)
         connected_ssid = self.wifi.get_connected_ssid()
-        if netinfo is None:
+        if netinfo is None or netinfo == {}:
             logging.debug("Couldn't get netinfo")
             netinfo = {'connected': connected_ssid == ssid}
 
